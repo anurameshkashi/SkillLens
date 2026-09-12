@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillLens — Developer Skill Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo"><span>Skill</span>Lens</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#practice">Practice</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#interview">Interview</a>
+    </nav>
+
+    <button class="nav-btn" id="dashboardBtn">Dashboard</button>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <span class="hero-label">INTERACTIVE DEVELOPER SKILL SIMULATOR</span>
+
+            <h1>
+                Practice.
+                <span>Improve.</span>
+                Become a Better Developer.
+            </h1>
+
+            <p>
+                SkillLens helps you practice developer skills through
+                interactive questions, coding challenges and interview simulations.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn" id="startPracticeBtn">
+                    Start Practice →
+                </button>
+
+                <button class="secondary-btn" id="viewDashboardBtn">
+                    View Dashboard
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-card-top">
+                <span>YOUR PROGRESS</span>
+                <span>LIVE</span>
+            </div>
+
+            <div class="progress-circle">
+                <strong id="heroProgress">0%</strong>
+            </div>
+
+            <h3>Keep learning 🚀</h3>
+
+            <p>
+                Complete your first practice session to start tracking progress.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section class="dashboard-section" id="dashboard">
+
+        <div class="section-header">
+            <span class="section-label">DASHBOARD</span>
+            <h2>Your Learning Overview</h2>
+            <p>Track your development skills and practice progress.</p>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <span>QUESTIONS</span>
+                <strong id="questionsCompleted">0</strong>
+                <small>Completed</small>
+            </div>
+
+            <div class="stat-card">
+                <span>SCORE</span>
+                <strong id="totalScore">0</strong>
+                <small>Total correct answers</small>
+            </div>
+
+            <div class="stat-card">
+                <span>ACCURACY</span>
+                <strong id="accuracy">0%</strong>
+                <small>Overall performance</small>
+            </div>
+
+            <div class="stat-card">
+                <span>STREAK</span>
+                <strong id="streak">0</strong>
+                <small>Practice sessions</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICE -->
+    <section class="practice-section" id="practice">
+
+        <div class="section-header">
+            <span class="section-label">PRACTICE</span>
+            <h2>Choose Your Skill</h2>
+            <p>Test your knowledge and strengthen your fundamentals.</p>
+        </div>
+
+        <div class="practice-cards">
+
+            <article class="practice-card">
+
+                <div class="card-icon">HTML</div>
+
+                <h3>HTML</h3>
+
+                <p>
+                    Practice semantic HTML, elements, attributes,
+                    forms and web structure.
+                </p>
+
+                <div class="card-footer">
+                    <span id="htmlProgress">0 questions</span>
+
+                    <button class="secondary-btn practice-btn" data-skill="html">
+                        Start HTML
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="card-icon">CSS</div>
+
+                <h3>CSS</h3>
+
+                <p>
+                    Practice selectors, layouts, Flexbox, Grid,
+                    responsive design and styling.
+                </p>
+
+                <div class="card-footer">
+                    <span>Coming soon</span>
+
+                    <button class="secondary-btn practice-btn" data-skill="css">
+                        Start CSS
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="practice-card">
+
+                <div class="card-icon">JS</div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Practice variables, functions, arrays,
+                    DOM manipulation and programming logic.
+                </p>
+
+                <div class="card-footer">
+                    <span>Coming soon</span>
+
+                    <button class="secondary-btn practice-btn" data-skill="javascript">
+                        Start JavaScript
+                    </button>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section class="question-section" id="questionSection">
+
+        <div class="question-box">
+
+            <div class="quiz-top">
+
+                <span class="section-label">HTML CHALLENGE</span>
+
+                <div class="score-display">
+                    Question <span id="questionNumber">1</span> / 3
+                    &nbsp; | &nbsp;
+                    Score: <span id="score">0</span>
+                </div>
+
+            </div>
+
+            <div class="question-progress">
+                <div id="questionProgressBar"></div>
+            </div>
+
+            <h2 id="questionText">
+                What does HTML stand for?
+            </h2>
+
+            <div class="answer-options">
+
+                <button class="answer-btn">
+                    Hyper Text Markup Language
+                </button>
+
+                <button class="answer-btn">
+                    High Text Machine Language
+                </button>
+
+                <button class="answer-btn">
+                    Hyperlink Text Management Language
+                </button>
+
+                <button class="answer-btn">
+                    Home Tool Markup Language
+                </button>
+
+            </div>
+
+            <button class="next-btn" id="nextQuestionBtn" disabled>
+                Next Question →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+    <section class="result-section" id="resultSection">
+
+        <div class="result-box">
+
+            <span class="section-label">QUIZ COMPLETE</span>
+
+            <div class="result-icon">🎉</div>
+
+            <h2>Great job!</h2>
+
+            <p>Your final score</p>
+
+            <div class="final-score">
+                <span id="finalScore">0</span>
+                <small>/ 3</small>
+            </div>
+
+            <div class="result-bar">
+                <div id="resultBar"></div>
+            </div>
+
+            <p id="resultMessage">
+                Keep practicing and improve your skills!
+            </p>
+
+            <div class="result-buttons">
+
+                <button class="primary-btn" id="restartQuizBtn">
+                    Restart Quiz ↻
+                </button>
+
+                <button class="secondary-btn" id="backToPracticeBtn">
+                    Back to Practice
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANALYTICS -->
+    <section class="analytics-section" id="analytics">
+
+        <div class="section-header">
+            <span class="section-label">ANALYTICS</span>
+            <h2>Skill Performance</h2>
+            <p>
+                Understand where you are improving and where you need more practice.
+            </p>
+        </div>
+
+        <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <div class="analytics-title">
+                    <span>HTML</span>
+                    <strong id="htmlAccuracy">0%</strong>
+                </div>
+
+                <div class="analytics-bar">
+                    <div id="htmlAccuracyBar"></div>
+                </div>
+
+                <small>Frontend fundamentals</small>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+                <div class="analytics-title">
+                    <span>CSS</span>
+                    <strong>0%</strong>
+                </div>
+
+                <div class="analytics-bar">
+                    <div></div>
+                </div>
+
+                <small>Layout and styling</small>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+                <div class="analytics-title">
+                    <span>JavaScript</span>
+                    <strong>0%</strong>
+                </div>
+
+                <div class="analytics-bar">
+                    <div></div>
+                </div>
+
+                <small>Programming fundamentals</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="weakness-card">
+
+            <div>
+                <span class="section-label">WEAKNESS DETECTOR</span>
+
+                <h3 id="weaknessTitle">
+                    No data yet
+                </h3>
+
+                <p id="weaknessText">
+                    Complete a practice quiz to receive personalized feedback.
+                </p>
+            </div>
+
+            <div class="weakness-icon">
+                💡
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CODING CHALLENGE -->
+    <section class="coding-section" id="coding">
+
+        <div class="section-header">
+            <span class="section-label">CODING CHALLENGE</span>
+
+            <h2>Build Something</h2>
+
+            <p>
+                Practice writing real code instead of only answering questions.
+            </p>
+        </div>
+
+        <div class="coding-card">
+
+            <div class="coding-info">
+
+                <span class="challenge-tag">BEGINNER</span>
+
+                <h3>Create a Button</h3>
+
+                <p>
+                    Write HTML that creates a button with the text
+                    <strong>"Click Me"</strong>.
+                </p>
+
+                <div class="expected-output">
+                    Expected:
+                    <code>&lt;button&gt;Click Me&lt;/button&gt;</code>
+                </div>
+
+            </div>
+
+
+            <div class="code-editor">
+
+                <textarea
+                    id="codeInput"
+                    spellcheck="false"
+                    placeholder="Write your HTML here..."
+                ></textarea>
+
+                <button class="primary-btn" id="runCodeBtn">
+                    Run Code ▶
+                </button>
+
+            </div>
+
+
+            <div class="code-result" id="codeResult">
+                Output will appear here.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERVIEW -->
+    <section class="interview-section" id="interview">
+
+        <div class="interview-card">
+
+            <div class="interview-content">
+
+                <span class="section-label">INTERVIEW MODE</span>
+
+                <h2>Ready for a Real Interview?</h2>
+
+                <p>
+                    Practice answering technical questions under
+                    interview-style conditions.
+                </p>
+
+                <button class="primary-btn" id="interviewBtn">
+                    Start Interview →
+                </button>
+
+            </div>
+
+            <div class="interview-visual">
+                <div class="interview-circle">
+                    🎤
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERVIEW MODAL -->
+    <div class="modal" id="interviewModal">
+
+        <div class="modal-box">
+
+            <button class="close-btn" id="closeInterview">
+                ×
+            </button>
+
+            <span class="section-label">
+                INTERVIEW QUESTION
+            </span>
+
+            <div class="timer">
+                <span id="timer">60</span>s
+            </div>
+
+            <h2 id="interviewQuestion">
+                Explain what HTML is and why it is used.
+            </h2>
+
+            <textarea
+                id="interviewAnswer"
+                placeholder="Type your answer here..."
+            ></textarea>
+
+            <button class="primary-btn" id="submitInterview">
+                Submit Answer
+            </button>
+
+            <p id="interviewFeedback"></p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        <span>Skill</span>Lens
+    </div>
+
+    <p>
+        Interactive Developer Skill Simulator
+    </p>
+
+    <p class="copyright">
+        Built with HTML, CSS & JavaScript
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

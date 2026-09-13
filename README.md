@@ -22,7 +22,7 @@ Built an engaging learning platform that makes technical skill practice more int
 
 ## 🌐 Live Demo
 
-[Visit SkillLens](https://YOUR-USERNAME.github.io/SkillLens/)
+[Visit SkillLens]( https://anurameshkashi.github.io/SkillLens/)
 
 ## 📂 Project Structure
 
